@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Profile</title>
+
+<style>
+
+body{
+background:#111;
+color:white;
+font-family:Arial;
+padding:40px;
+}
+
+.card{
+
+max-width:600px;
+
+margin:auto;
+
+background:#1e1e1e;
+
+padding:40px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+.avatar{
+
+font-size:90px;
+
+}
+
+.info{
+
+margin-top:25px;
+
+font-size:22px;
+
+line-height:2;
+
+}
+
+button{
+
+margin-top:30px;
+
+padding:12px 30px;
+
+background:#6c63ff;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="avatar">
+👤
+</div>
+
+<h1><%= user.username %></h1>
+
+<div class="info">
+
+<p>📧 <%= user.email %></p>
+
+<p>🪙 Coins : <%= user.coins %></p>
+
+<p>🏆 Level : <%= user.level %></p>
+
+<p>⭐ XP : <%= user.xp %></p>
+
+<p>🎮 Games Played : <%= user.gamesPlayed %></p>
+
+<p>🥇 Wins : <%= user.wins %></p>
+
+<p>❌ Losses : <%= user.losses %></p>
+
+</div>
+
+<a href="/dashboard">
+<button>
+⬅ Dashboard
+</button>
+</a>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GoPlay Settings</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#1e1e1e;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.setting{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    border-bottom:1px solid #333;
+}
+
+.setting:last-child{
+    border-bottom:none;
+}
+
+button{
+    background:#6c63ff;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#574bff;
+}
+
+a{
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚙️ GoPlay Settings</h1>
+
+<div class="card">
+
+<div class="setting">
+<span>👤 Username</span>
+<span><%= user.username %></span>
+</div>
+
+<div class="setting">
+<span>📧 Email</span>
+<span><%= user.email %></span>
+</div>
+
+<div class="setting">
+<span>🌙 Dark Mode</span>
+<button>Enabled</button>
+</div>
+
+<div class="setting">
+<span>🔔 Notifications</span>
+<button>Coming Soon</button>
+</div>
+
+<div class="setting">
+<span>🎵 Sound</span>
+<button>Coming Soon</button>
+</div>
+
+<div class="setting">
+<span>🌐 Language</span>
+<button>English</button>
+</div>
+
+<div class="setting">
+<span>🔒 Change Password</span>
+<button>Coming Soon</button>
+</div>
+
+<div class="setting">
+<span>ℹ️ About GoPlay</span>
+<button>Version 1.0</button>
+</div>
+
+</div>
+
+<a href="/dashboard">
+<button>⬅ Back to Dashboard</button>
+</a>
+
+</div>
+
+</body>
+</html>

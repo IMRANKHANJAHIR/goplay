@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaderboard</title>
+
+<style>
+body{
+    background:#111;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+
+table{
+    margin:auto;
+    border-collapse:collapse;
+    width:60%;
+}
+
+th,td{
+    border:1px solid #555;
+    padding:12px;
+}
+
+th{
+    background:#333;
+}
+
+tr:nth-child(even){
+    background:#222;
+}
+
+a{
+    color:#00ff88;
+    text-decoration:none;
+    font-size:20px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>🏆 GoPlay Leaderboard</h1>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>Username</th>
+<th>Coins</th>
+</tr>
+
+<% users.forEach((user,index)=>{ %>
+
+<tr>
+<td><%= index+1 %></td>
+<td><%= user.username %></td>
+<td><%= user.coins %></td>
+</tr>
+
+<% }) %>
+
+</table>
+
+<br>
+
+<a href="/dashboard">⬅ Dashboard</a>
+
+</body>
+</html>

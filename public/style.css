@@ -1,0 +1,112 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#111;
+  color:white;
+}
+
+/* Header */
+
+header{
+  background:#1b1b1b;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.logo{
+  font-size:34px;
+  font-weight:bold;
+  color:#6c63ff;
+}
+
+.search-box input{
+  width:280px;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  font-size:16px;
+}
+
+.nav-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.nav-buttons a{
+  text-decoration:none;
+}
+
+.nav-buttons button{
+  background:#6c63ff;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+  transition:.3s;
+}
+
+.nav-buttons button:hover{
+  background:#574bff;
+  transform:translateY(-2px);
+}
+
+/* Headings */
+
+h2{
+  padding:25px 30px 5px;
+}
+
+/* Categories */
+
+.categories,
+.games{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  padding:20px 30px;
+}
+
+/* Cards */
+
+.card{
+  background:#1e1e1e;
+  border-radius:18px;
+  padding:35px 20px;
+  text-align:center;
+  cursor:pointer;
+  transition:.3s;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.card:hover{
+  background:#2d2d2d;
+  transform:scale(1.05);
+  box-shadow:0 0 20px rgba(108,99,255,.5);
+}
+
+.game-link{
+  text-decoration:none;
+  color:white;
+}
+
+/* Footer */
+
+footer{
+  margin-top:40px;
+  background:#1b1b1b;
+  text-align:center;
+  padding:20px;
+  color:#aaa;
+}

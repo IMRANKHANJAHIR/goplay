@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GoPlay Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#111;
+color:white;
+}
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 40px;
+
+background:#1b1b1b;
+
+}
+
+.logo{
+
+font-size:35px;
+font-weight:bold;
+
+}
+
+.right{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.coins{
+
+background:gold;
+color:black;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+}
+
+.container{
+
+padding:40px;
+
+}
+
+.profile{
+
+background:#1e1e1e;
+
+padding:30px;
+
+border-radius:20px;
+
+margin-bottom:30px;
+
+}
+
+.profile h1{
+
+margin-bottom:10px;
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+margin-bottom:40px;
+
+}
+
+.stat{
+
+background:#1e1e1e;
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+.stat h2{
+
+font-size:32px;
+
+margin-bottom:10px;
+
+}
+
+.games{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-top:20px;
+
+}
+
+.game{
+
+background:#1e1e1e;
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.game:hover{
+
+transform:scale(1.05);
+
+background:#2d2d2d;
+
+}
+
+button{
+
+background:#6c63ff;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+margin-top:15px;
+
+font-size:16px;
+
+}
+
+button:hover{
+
+background:#574bff;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+.footer{
+
+margin-top:40px;
+
+display:flex;
+
+gap:20px;
+
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+🎮 GoPlay
+</div>
+
+<div class="right">
+
+<div class="coins">
+🪙 <%= user.coins %> Coins
+</div>
+
+<a href="/logout">
+<button>Logout</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="profile">
+
+<h1>Welcome, <%= user.username %> 👋</h1>
+
+<p><%= user.email %></p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>🪙</h2>
+<p><%= user.coins %> Coins</p>
+</div>
+
+<div class="stat">
+<h2>🎮</h2>
+<p>Games Played<br>0</p>
+</div>
+
+<div class="stat">
+<h2>🏆</h2>
+<p>Wins<br>0</p>
+</div>
+
+</div>
+
+<h1>Popular Games</h1>
+
+<div class="games">
+
+<div class="game">
+
+<h2>❌ Tic Tac Toe</h2>
+
+<a href="/tictactoe">
+<button>Play</button>
+</a>
+
+</div>
+
+<div class="game">
+
+    <h2>🐍 Snake</h2>
+
+    <a href="/snake">
+    <button>Play</button>
+    </a>
+
+</div>
+
+<div class="game">
+
+<h2>♟ Chess</h2>
+
+<button>Coming Soon</button>
+
+</div>
+
+<div class="game">
+
+    <h2>🧩 Sudoku</h2>
+
+    <a href="/sudoku">
+        <button>Play</button>
+    </a>
+
+</div>
+
+<div class="game">
+
+<h2>🎱 Carrom</h2>
+
+<button>Coming Soon</button>
+
+</div>
+
+<div class="game">
+
+<h2>🏏 Cricket</h2>
+
+<button>Coming Soon</button>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<a href="/leaderboard">
+<button>🏆 Leaderboard</button>
+</a>
+
+<a href="/settings">
+    <button>⚙️ Settings</button>
+</a>
+
+
+<button onclick="claimReward()">
+  🎁 Daily Reward
+  </button>
+
+  <a href="/profile">
+    <button>
+    👤 Profile
+    </button>
+    </a>
+
+</div>
+
+</div>
+<a href="/achievements">
+    <button>🏆 Achievements</button>
+</a>
+<script>
+
+  async function claimReward(){
+  
+      const response = await fetch("/dailyreward",{
+  
+          method:"POST"
+  
+      });
+  
+      const data = await response.json();
+  
+      if(data.success){
+  
+          alert("🎉 +50 Coins!");
+  
+          location.reload();
+  
+      }
+  
+      else{
+  
+          alert(data.message);
+  
+      }
+  
+  }
+  
+  </script>
+
+</body>
+</html>

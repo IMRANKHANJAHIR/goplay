@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Achievements</title>
+
+<style>
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial;
+}
+
+.container{
+
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+
+}
+
+h1{
+
+    text-align:center;
+    margin-bottom:40px;
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+
+}
+
+.card{
+
+    background:#1e1e1e;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+
+}
+
+.locked{
+
+    opacity:.4;
+
+}
+
+button{
+
+    margin-top:30px;
+    padding:12px 25px;
+    background:#6c63ff;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏆 Achievements</h1>
+
+<div class="grid">
+
+<div class="card <%= user.achievements.includes('First Login') ? '' : 'locked' %>">
+
+<h2>🎉 First Login</h2>
+
+<p>Login to GoPlay.</p>
+
+</div>
+
+<div class="card <%= user.achievements.includes('Snake Master') ? '' : 'locked' %>">
+
+<h2>🐍 Snake Master</h2>
+
+<p>Score 20 in Snake.</p>
+
+</div>
+
+<div class="card <%= user.achievements.includes('Sudoku Solver') ? '' : 'locked' %>">
+
+<h2>🧩 Sudoku Solver</h2>
+
+<p>Solve one Sudoku puzzle.</p>
+
+</div>
+
+<div class="card <%= user.achievements.includes('Tic Tac Toe Champion') ? '' : 'locked' %>">
+
+<h2>❌ Tic Tac Toe Champion</h2>
+
+<p>Win 5 games.</p>
+
+</div>
+
+</div>
+
+<br>
+
+<a href="/dashboard">
+<button>⬅ Dashboard</button>
+</a>
+
+</div>
+
+</body>
+
+</html>
